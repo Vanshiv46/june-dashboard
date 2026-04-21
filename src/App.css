@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f0f0ee;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ── OUTER GRID ── */
+.page-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #f0f0ee;
+  padding: 40px 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 12px;
+  width: 820px;
+  max-width: 100%;
+}
+
+/* ── GRID POSITIONS ── */
+.top-left    { grid-column: 1; grid-row: 1; }
+.top-right   { grid-column: 2; grid-row: 1; }
+.mid-left    { grid-column: 1; grid-row: 2 / 4; }   /* spans rows 2+3 */
+.mid-right   { grid-column: 2; grid-row: 2; }
+.bottom-right{ grid-column: 2; grid-row: 3; }
+
+/* ── BASE CARD ── */
+.card {
+  border-radius: 18px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── CARD COLORS ── */
+.card-blue   { background: #c8e9f5; }
+.card-white  { background: #ffffff; padding: 0; }
+.card-purple { background: #f0d8f5; }
+.card-yellow { background: #fef9c3; }
+.card-green  { background: #d8f5e0; }
+
+/* ════════════════════════
+   TOP-LEFT: Blue headline
+   ════════════════════════ */
+.card-blue h2 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #0a2540;
+  line-height: 1.35;
+  max-width: 230px;
+}
+
+/* ════════════════════════
+   TOP-RIGHT: Company + Activation
+   ════════════════════════ */
+.company-activation-card {
+  display: flex;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+
+.company-block {
+  flex: 1;
+  padding: 20px 18px;
+  border-right: 1px solid #f0f0f0;
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.intercom-icon {
+  width: 38px; height: 38px;
+  background: #1a1a2e;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.co-name  { font-size: 14px; font-weight: 700; color: #111; }
+.co-joined{ font-size: 11px; color: #22c55e; font-weight: 500; margin-top: 2px; }
+
+.metrics { display: flex; flex-direction: column; gap: 6px; }
+
+.metric-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #555;
+}
+.lightning { color: #facc15; font-size: 12px; }
+.metric-val { margin-left: auto; font-weight: 600; color: #111; font-size: 12px; }
+
+.divider-v { width: 1px; background: #f0f0f0; }
+
+.activation-block { flex: 1; padding: 20px 18px; }
+
+.act-label { font-size: 11px; color: #888; margin-bottom: 4px; }
+.act-pct   { font-size: 34px; font-weight: 700; color: #111; line-height: 1; margin-bottom: 12px; }
+
+.funnel-rows { display: flex; flex-direction: column; gap: 7px; }
+
+.funnel-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+}
+.funnel-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.funnel-name { color: #555; width: 72px; flex-shrink: 0; }
+.funnel-bar-bg {
+  flex: 1;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.funnel-bar-fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
+.funnel-pct { color: #888; width: 30px; text-align: right; flex-shrink: 0; }
+
+/* ════════════════════════
+   MID-LEFT: Milestones purple
+   ════════════════════════ */
+.card-purple h3 { font-size: 19px; font-weight: 700; color: #3b0764; margin-bottom: 6px; }
+.card-purple p  { font-size: 13px; color: #6b21a8; line-height: 1.5; max-width: 220px; }
+
+/* Slack card */
+.slack-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.slack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.slack-app-info { display: flex; align-items: center; gap: 5px; }
+.slack-j-icon {
+  width: 20px; height: 20px;
+  background: #5865f2;
+  border-radius: 5px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 11px; font-weight: 700;
+}
+.slack-app-name { font-size: 13px; font-weight: 700; color: #111; }
+.slack-app-tag  { font-size: 10px; color: #888; background: #f0f0f0; padding: 1px 5px; border-radius: 4px; }
+.slack-time     { font-size: 10px; color: #aaa; }
+
+.slack-event-badge {
+  display: inline-block;
+  background: #22c55e;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.slack-user-row {
+  display: flex; align-items: center; gap: 7px;
+  margin-bottom: 10px;
+}
+.slack-avatar {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: #f59e0b;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; color: #fff; font-weight: 700;
+}
+.slack-uname  { font-size: 12px; font-weight: 600; color: #111; }
+.slack-email  { font-size: 11px; color: #6366f1; }
+
+.slack-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 12px;
+}
+.sf-label { font-size: 10px; color: #888; margin-bottom: 1px; }
+.sf-val   { font-size: 11px; font-weight: 500; color: #111; }
+.sf-link  { font-size: 11px; font-weight: 500; color: #6366f1; }
+
+/* "Also done for you" */
+.also-done {
+  margin-top: 16px;
+  position: relative;
+}
+.also-done-text {
+  font-size: 13px;
+  color: #7e22ce;
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+.curly-arrow {
+  position: absolute;
+  left: 116px;
+  top: -6px;
+}
+.done-badges { display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+.done-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  width: fit-content;
+}
+.badge-inner {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #555;
+  font-weight: 400;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 12px;
+}
+
+/* ════════════════════════
+   MID-RIGHT: Enrichment yellow
+   ════════════════════════ */
+.card-yellow h3 { font-size: 19px; font-weight: 700; color: #713f12; margin-bottom: 6px; }
+.card-yellow p  { font-size: 13px; color: #854d0e; line-height: 1.5; }
+
+.enriched-with-ai {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: #7c3aed;
+  font-weight: 600;
+  margin: 12px 0 12px;
+}
+
+.enrich-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+.enrich-item { }
+.enrich-top {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2px;
+}
+.enrich-icon  { font-size: 11px; color: #aaa; }
+.icon-green   { color: #22c55e; }
+.enrich-key   { font-size: 11px; color: #888; }
+.enrich-val   { font-size: 12px; font-weight: 500; color: #111; }
+.enrich-val-link { font-size: 12px; font-weight: 500; color: #3b82f6; }
+
+/* brand logo badges */
+.enrich-logos {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  display: flex; gap: 5px;
+}
+.enrich-logo {
+  width: 30px; height: 30px;
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+}
+.purple-bg { background: #f0e6ff; }
+.dark-bg   { background: #1a1a2e; }
+
+/* ════════════════════════
+   BOTTOM-RIGHT: CRM green
+   ════════════════════════ */
+.card-green h3 { font-size: 19px; font-weight: 700; color: #14532d; margin-bottom: 6px; }
+.card-green p  { font-size: 13px; color: #166534; line-height: 1.5; max-width: 240px; }
+
+.crm-table {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-top: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.crm-table-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.crm-title { font-size: 13px; font-weight: 700; color: #111; }
+
+.crm-logos-row { display: flex; gap: 6px; }
+.crm-logo-wrap {
+  width: 26px; height: 26px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.gray-bg   { background: #f3f4f6; }
+.orange-bg { background: #fff4f0; }
+
+.crm-col-headers {
+  display: grid; grid-template-columns: 1fr 1fr;
+  font-size: 11px; color: #888;
+  padding-bottom: 6px;
+}
+
+.crm-divider { height: 1px; background: #f1f1f1; margin-bottom: 6px; }
+
+.crm-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 12px;
+}
+.crm-company-cell { display: flex; align-items: center; gap: 8px; }
+.crm-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.crm-dot.dark { background: #1a1a2e; }
+.crm-dot.red  { background: #ef4444; }
+.crm-seats { font-size: 12px; font-weight: 500; color: #111; }
+.delta-pos { color: #16a34a; font-size: 11px; }
+.delta-neg { color: #dc2626; font-size: 11px; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+  }
+  .top-left, .top-right, .mid-left, .mid-right, .bottom-right {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .mid-left { grid-row: auto; }
+  .company-activation-card { flex-direction: column; }
+  .divider-v { width: 100%; height: 1px; }
+}
