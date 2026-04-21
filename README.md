@@ -1,64 +1,44 @@
-# June — Exact Frontend Clone
+# June Dashboard
 
-Pixel-perfect HTML/CSS clone of the June.so marketing page screenshot.
+A pixel-perfect clone of the [June.so](https://june.so) marketing page, built with React.
 
-## 📁 Files
-```
-june-exact/
-├── index.html    ← Complete page, zero dependencies
-└── README.md
-```
+## 🔗 Live Demo
 
-## 🖥️ Run locally
-```bash
-open index.html        # Mac
-start index.html       # Windows
-```
+👉 [https://june-dashboard-8un8.vercel.app/](https://june-dashboard-8un8.vercel.app/)
 
 ---
 
-## 🔄 GitHub pe update karne ke steps (pehle wala repo update karo)
+## ✨ Features
 
-### Option A — Pehle wale repo mein replace karo
-
-```bash
-# 1. Pehle wala repo clone karo (agar nahi hai locally)
-git clone https://github.com/TERA_USERNAME/june-crm-dashboard.git
-cd june-crm-dashboard
-
-# 2. Purana index.html delete karo, naya copy karo
-# (is folder se apna naya index.html yahan paste karo)
-
-# 3. Stage + commit + push
-git add index.html
-git commit -m "feat: pixel-perfect june marketing page clone"
-git push origin main
-```
-
-### Option B — Naya alag repo banao (recommended)
-
-```bash
-# 1. Is folder mein jao
-cd june-exact
-
-# 2. Git init
-git init
-git add .
-git commit -m "feat: june exact clone - pixel perfect"
-
-# 3. GitHub pe naya repo banao: june-exact
-# phir:
-git remote add origin https://github.com/TERA_USERNAME/june-exact.git
-git branch -M main
-git push -u origin main
-```
-
-### ✅ GitHub Pages se live karo (FREE)
-1. GitHub repo → **Settings** → **Pages**
-2. Source: `Deploy from a branch` → Branch: `main` → `/ (root)`
-3. Save → 2-3 min baad live:
-   `https://TERA_USERNAME.github.io/june-exact/`
+- Automatic report cards per customer
+- Company activation funnel
+- Celebrate milestones (Slack-style alerts)
+- AI-powered automatic enrichment (GPT)
+- CRM integration display
 
 ---
 
-MIT License
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/Vanshiv46/june-dashboard.git
+cd june-dashboard
+npm install
+npm start
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🛠️ Built With
+
+- React
+- CSS3
+- Deployed on Vercel
+
+---
+
+## 📄 License
+
+MIT
